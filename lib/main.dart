@@ -49,6 +49,16 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Center(
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/ade.jpg'),
+                  radius: 40,
+                ),
+              ),
+              Divider(
+                height: 60,
+                color: Colors.grey,
+              ),
               Text(
                 'NAME',
                 style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
@@ -78,64 +88,29 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontSize: 29,
                     fontWeight: FontWeight.bold),
               ),
-             
+              SizedBox(
+                height: 30.0,
+              ),
+              Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.email,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    'adetoyesesamson@gmail.com',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 18,
+                      letterSpacing: 1.0,
+                    ),
+                  )
+                ],
+              )
             ],
           ),
-        )
-
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //   crossAxisAlignment: CrossAxisAlignment.center,
-        //   children: <Widget>[
-        //     const Expanded(
-        //       flex: 2,
-        //       child: Image(image: AssetImage('assets/ade.jpg'))
-        //     ),
-        //    Expanded(
-        //     flex: 1,
-        //      child: Container(
-        //       // margin:const EdgeInsets.only(right: 50),
-        //       padding:const EdgeInsets.all(30.0),
-        //       color: Colors.amber,
-        //       child: const Text('ON'),
-        //      ),
-        //    ),
-        //    Expanded(
-        //       flex: 1,
-        //       child: Container(
-        //         padding: const EdgeInsets.all(30.0),
-        //           color: Colors.green,
-        //       child: const Text('two'),
-        //                  ),
-        //     ),
-        //     Expanded(
-        //     flex: 1,
-        //      child: Container(
-        //         padding: const EdgeInsets.all(30.0),
-        //         color: Colors.red,
-        //         child: const Text('three'),
-        //       ),
-        //    ),
-        //   ],
-        // )
-        //  Center(
-        //   child:  ElevatedButton.icon(onPressed: (){},
-        //    icon: const Icon(
-        //     Icons.mail,
-        //     color: Colors.red,
-        //     size: 50,
-        //    ),
-        //    label:const Text('MAil me',),
-
-        //    )
-        // Icon(
-        //   Icons.abc,
-        //   color: Colors.red,
-        //   size: 70.0,
-        // )
-        //  Image(image: AssetImage('assets/adewale.png')
-        // // NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN9X9ALcd0Vk8VdjpD5BUUBAJOiGUJF6p1Hg&s')//
-        // ),
+        )  
         );
   }
 }
