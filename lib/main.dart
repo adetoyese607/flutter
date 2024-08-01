@@ -30,87 +30,125 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // for awesome quotes
+  List<String> quotes = [
+    'God first, Work H=Smart, Success is Sure',
+    'With God, All things are possible',
+    'God bless me and mk his face shie upon me'
+  ];
+
+  // for Ninja ID card
+  // int ninjaLevel = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[900],
+        // backgroundColor: Colors.grey[900],
         appBar: AppBar(
-          backgroundColor: Colors.grey[850],
+          backgroundColor: Colors.orangeAccent,
           // titleTextStyle: Colors.white,
+          // title: const Text(
+          //   'Ninja ID Card',
+          //   style: TextStyle(color: Colors.white),
+          // ),
           title: const Text(
-            'Ninja ID Card',
+            'Awesome Quotes',
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,
           elevation: 0,
         ),
-        body: const Padding(
-          padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Center(
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/ade.jpg'),
-                  radius: 40,
-                ),
-              ),
-              Divider(
-                height: 60,
-                color: Colors.grey,
-              ),
-              Text(
-                'NAME',
-                style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
-              ),
-              SizedBox(height: 10.0,),
-              Text(
-                'Samson',
-                style: TextStyle(color: Colors.amberAccent, letterSpacing: 2.0,
-                fontSize: 29,
-                fontWeight: FontWeight.bold),
-              ),
-               SizedBox(
-                height: 30.0,
-              ),
-               Text(
-                'CURRET NINJA LEVEL',
-                style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text(
-                '8',
-                style: TextStyle(
-                    color: Colors.amberAccent,
-                    letterSpacing: 2.0,
-                    fontSize: 29,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.grey,
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    'adetoyesesamson@gmail.com',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 18,
-                      letterSpacing: 1.0,
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
-        )  
+
+        // AWESOME QUOTE BODY
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+            children: quotes.map((quote) {
+          return Text(quote);
+        }).toList()
+        )
+
+        // NINJA ID CARD
+
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     setState(() {
+        //       ninjaLevel += 1;
+        //     });
+        //   },
+        //   backgroundColor: Colors.grey[850],
+        //   child: const Icon(Icons.add, color: Colors.white),
+        // ),
+
+        // body: Padding(
+        //   padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
+        //   child: Column(
+        //     crossAxisAlignment: CrossAxisAlignment.start,
+        //     children: <Widget>[
+        //       const Center(
+        //         child: CircleAvatar(
+        //           backgroundImage: AssetImage('assets/ade.jpg'),
+        //           radius: 40,
+        //         ),
+        //       ),
+        //       const Divider(
+        //         height: 60,
+        //         color: Color.fromARGB(160, 158, 158, 158),
+        //       ),
+        //       const Text(
+        //         'NAME',
+        //         style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
+        //       ),
+        //       const SizedBox(
+        //         height: 10.0,
+        //       ),
+        //       const Text(
+        //         'Samson',
+        //         style: TextStyle(
+        //             color: Colors.amberAccent,
+        //             letterSpacing: 2.0,
+        //             fontSize: 29,
+        //             fontWeight: FontWeight.bold),
+        //       ),
+        //       const SizedBox(
+        //         height: 30.0,
+        //       ),
+        //       const Text(
+        //         'CURRET NINJA LEVEL',
+        //         style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
+        //       ),
+        //       const SizedBox(
+        //         height: 10.0,
+        //       ),
+        //       Text(
+        //         '$ninjaLevel',
+        //         style: const TextStyle(
+        //             color: Colors.amberAccent,
+        //             letterSpacing: 2.0,
+        //             fontSize: 29,
+        //             fontWeight: FontWeight.bold),
+        //       ),
+        //       const SizedBox(
+        //         height: 30.0,
+        //       ),
+        //       const Row(
+        //         children: <Widget>[
+        //           Icon(
+        //             Icons.email,
+        //             color: Colors.grey,
+        //           ),
+        //           SizedBox(width: 10),
+        //           Text(
+        //             'adetoyesesamson@gmail.com',
+        //             style: TextStyle(
+        //               color: Colors.grey,
+        //               fontSize: 18,
+        //               letterSpacing: 1.0,
+        //             ),
+        //           )
+        //         ],
+        //       )
+        //     ],
+        //   ),
+        // )
         );
   }
 }
