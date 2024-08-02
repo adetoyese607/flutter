@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,10 +32,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   // for awesome quotes
-  List<String> quotes = [
-    'God first, Work H=Smart, Success is Sure',
-    'With God, All things are possible',
-    'God bless me and mk his face shie upon me'
+  List<Quote> quotes = [
+    Quote(author: 'Adetoyese Samson', text: 'BE yourself and be blessed'),
+    Quote(author: 'Adetoyese Samson', text: 'BE yourself and be blessed'),
+    Quote(author: 'Adetoyese Samson', text: 'BE yourself and be blessed')
   ];
 
   // for Ninja ID card
@@ -59,10 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
 
         // AWESOME QUOTE BODY
-        body: Column(
+        body:  Column(
           crossAxisAlignment: CrossAxisAlignment.start,
             children: quotes.map((quote) {
-          return Text(quote);
+          return Text('${quote.author} --- ${quote.text}');
         }).toList()
         )
 
