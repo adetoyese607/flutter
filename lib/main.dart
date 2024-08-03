@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,12 +61,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
 
         // AWESOME QUOTE BODY
-        body:  Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: quotes.map((quote) {
-          return Text('${quote.author} --- ${quote.text}');
-        }).toList()
-        )
+              return QuoteCard(
+                  quote: quote,
+                  delete: () {
+                    setState(() {
+                      quotes.remove(quote);
+                    });
+                  });
+            }).toList())
 
         // NINJA ID CARD
 
