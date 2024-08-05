@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter/pages/choose_location.dart';
+import 'package:new_flutter/pages/loading.dart';
 import 'pages/home.dart';
 // import 'quote.dart';
 // import 'quote_card.dart';
@@ -19,7 +21,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      // home: const Home(),
+      initialRoute: '/home',
+      routes:  {
+        '/': (context) => const Loading(),
+        '/home': (context) =>const Home(),
+        '/location' : (context) => const ChooseLocation()
+
+      },
     );
   }
 }
