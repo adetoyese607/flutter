@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 // import 'package:new_flutter/pages/home.dart';
-// 
+//
 void main() {
   runApp(const MyApp());
 }
@@ -16,10 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        
       ),
-    home:const MyHomePage(title: 'Product LAyout'),
-     
+      home: const MyHomePage(title: 'Product LAyout'),
     );
   }
 }
@@ -33,45 +32,55 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.grey[900],
-      appBar: AppBar(
-        backgroundColor: Colors.redAccent,
-        // titleTextStyle: Colors.white,
-        // title: const Text(
-        //   'Ninja ID Card',
-        //   style: TextStyle(color: Colors.white),
-        // ),
-        title: const Text(
-          'Product LAyout',
-          style: TextStyle(color: Colors.white),
+        // backgroundColor: Colors.grey[900],
+        appBar: AppBar(
+          backgroundColor: Colors.redAccent,
+          // titleTextStyle: Colors.white,
+          // title: const Text(
+          //   'Ninja ID Card',
+          //   style: TextStyle(color: Colors.white),
+          // ),
+          title: const Text(
+            'Product LAyout',
+            style: TextStyle(color: Colors.white),
+          ),
+          centerTitle: true,
+          elevation: 0,
         ),
-        centerTitle: true,
-        elevation: 0,
-      ),
-      body: ListView(
-        // children: <Widget>[
-        //   ProductBox(
-        //     name: 'iPhone',
-        //     description: 
-        //   )
-        // ],
-      )
-    );
+        body: Center(
+          child: TextButton(
+              onPressed: () {
+                sshowDialog(context);
+              },
+              child: const Text('Hello Woeld')),
+          // child: GestureDetector(
+          //   onTap: () {
+          //     sshowDialog(context);
+
+          //   },
+          //   child:const Icon(Icons.power_input)
+          // ),
+        ));
   }
 }
 
-class ProductBox extends StatefulWidget {
-  const ProductBox({super.key});
-  
-  @override
-  State<StatefulWidget> createState() {
-  }
-  final String name
-
-
-  
+void sshowDialog(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Message'),
+          content: const Text('HEllo World'),
+          actions: <Widget>[
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Close'))
+          ],
+        );
+      });
 }
